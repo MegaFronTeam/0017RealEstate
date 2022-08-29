@@ -1,7 +1,72 @@
 
 	// start .header
 	.header {
-		 
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 200;
+		// position: fixed;
+		// background-color: #fff;
+		background-color: rgba(30, 40, 49, 0.5);
+		backdrop-filter: blur(15px);
+		position: absolute;
+		@include media-breakpoint-up(md) {
+			background-color: transparent;
+			backdrop-filter: unset;
+		}
+		&--js{
+			&.fixed-animate{
+				transition: transform .4s;
+				position: fixed;
+			}
+			&.fixed{
+				padding: rem(10) 0;
+				transform: translateY(-150%);
+				// padding-top: .875rem;
+				// padding-top: 0;
+				background-color: rgba(255, 255, 255, 0.85);
+				border: 1px solid #DEDFE0;
+				backdrop-filter: blur(15px);
+				color: $body-color;
+				&::after{
+					// opacity: 0.9;
+					background-color: rgba(255,255,255, .90);
+					backdrop-filter: blur(20px);
+				}
+				.toggle-menu-mobile p, .top-nav__logo-wrap p, .top-nav__working, .top-nav__callBack a, .top-nav__conultation p {
+					color: $body-color;
+				}
+				.toggle-menu-mobile span {
+					--color: #{$body-color};
+				}
+				.icon-viber {
+					color: #8852C1;
+				}
+				.icon-telegram {
+					color: #2FA6D9;
+				}
+				.icon-whatsapp {
+					color: #00C958;
+				}
+				.top-nav {
+					&__logo {
+						@include media-breakpoint-up(sm) {
+							padding: 0;
+							background-color: transparent;
+						}
+						img {
+							max-width: rem(68);
+						}
+					}
+				}
+			}
+			&.fixed-show{
+				transform: translateY(0);
+				
+			}
+		}
+		@include media-breakpoint-up(lg) {
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

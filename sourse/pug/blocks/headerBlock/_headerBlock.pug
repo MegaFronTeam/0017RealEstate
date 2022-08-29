@@ -1,6 +1,10 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
+	+b.headerBlock.section#headerBlock.bg-wrap&attributes(attributes)
+		//- +img('img/header-bg.jpg', 'bg').picture-bg
+		picture.picture-bg
+			<source media="(min-width:400px)" srcset="img/header-bg.jpg">
+			+img('img/header-bg-sm.jpg')
 		.container
 			+b.section-title.text-center
 				h2 headerBlock ds dfsdfdsfsd

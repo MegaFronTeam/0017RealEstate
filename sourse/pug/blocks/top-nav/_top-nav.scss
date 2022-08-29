@@ -1,19 +1,194 @@
 .top-nav {
-	// background: svg-load('../svg/check.svg',  stroke=$primary); 
-	// 
-	@include media-breakpoint-up(xl) {
-		background-color: #000;
-		border: 1px solid #000;
+	position: relative;
+	@include media-breakpoint-down(md) {
+		// background-color: rgba(30, 40, 49, 0.5);
+		// backdrop-filter: blur(15px);
 	}
-
-	@include media-breakpoint-up(lg) {
-		background-color: red;
-
+	&__container {
+		--bs-gutter-x: #{rem(40)};
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(120)};
+		}
 	}
-	p{
-		@include ell();
+	&__row {
+		--bs-gutter-x: #{rem(20)};
+		align-items: center;
+		@include media-breakpoint-up(xl) {
+			--bs-gutter-x: #{rem(18)};
+		}
+		@include media-breakpoint-up(xxl) {
+			--bs-gutter-x: #{rem(60)};
+		}
 	}
-
+	&__logo-wrap {
+		display: flex;
+		align-items: center;
+		@include media-breakpoint-down(sm) {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: 0;
+		}
+		p {
+			max-width: rem(255);
+			font-family: $font-family-monospace;
+			line-height: 1.56em;
+			margin-bottom: 0;
+			color: #fff;
+			display: none;
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
+		}
+	}
+	&__logo {
+		padding: rem(10);
+		background-color: #fff;
+		text-align: center;
+		@include media-breakpoint-up(md) {
+			padding: rem(18);
+			margin-right: rem(18.975);
+		}
+		@include media-breakpoint-up(xl) { 
+			padding: rem(20);
+			margin-right: rem(35);
+		}
+		@include media-breakpoint-up(xxl) {
+			margin-right: rem(60);
+		}
+		img {
+			max-width: rem(50);
+			@include media-breakpoint-up(md) {
+				max-width: rem(52);
+			}
+			@include media-breakpoint-up(xl) {
+				max-width: rem(80);
+			}
+		}
+	}
+	.soc {
+		--bs-gutter-x: #{rem(5)};
+		&__item {
+			height: 24px;
+			width: 24px;
+			@include media-breakpoint-up(md) {
+				background-color: transparent;
+			}
+			&:nth-child(1) {
+				@include media-breakpoint-down(md) {
+					order: 3;
+				}
+			}
+			&:nth-child(2) {
+				@include media-breakpoint-down(md) {
+					order: 2;
+				}
+			}
+			&:nth-child(3) {
+				@include media-breakpoint-down(md) {
+					order: 1;
+				}
+			}
+			.icon {
+				@include media-breakpoint-down(md) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	&__callBack {
+		a {
+			color: #fff;
+			font-weight: 600;
+			font-size: rem(20);
+			text-align: right;
+		}
+	}
+	&__working {
+		font-family: $font-family-monospace;
+		text-align: right;
+		color: #fff;
+		position: relative;
+		padding-left: rem(18);
+		max-width: max-content;
+    margin-left: auto;
+		margin-bottom: rem(3);
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: 0px;
+			width: 8px;
+			height: 8px;
+			border-radius: 100%;
+			background-color: #32cd32;
+			animation: phoneTag 4.7s infinite ease;
+		}
+	}
+	&__conultation {
+		display: flex;
+		align-items: center;
+		p {
+			margin-bottom: 0;
+			color: #fff;
+			max-width: rem(167);
+			margin-left: rem(20);
+			font-weight: 600;
+			line-height: 1.25em;
+		}
+	}
+	&__img-wrap {
+		position: relative;
+		img {
+			border-radius: 50%;
+		}
+	}
+	.toggle-menu-mobile {
+		@include media-breakpoint-up(xxl) {
+			margin-right: rem(64);
+		}
+	}
+	&__call {
+		color: $body-color;
+		font-size: rem(24);
+		font-weight: 600;
+		margin-bottom: rem(20);
+		text-align: center;
+	}
+	@keyframes phoneTag {
+		0% {
+			transform: scale(1);
+		}
+	
+		40% {
+			transform: scale(1);
+		}
+	
+		45% {
+			transform: scale(1.3);
+		}
+	
+		50% {
+			transform: scale(0);
+		}
+	
+		55% {
+			transform: scale(0);
+		}
+	
+		60% {
+			transform: scale(1.3);
+		}
+	
+		65% {
+			transform: scale(1);
+		}
+	
+		100% {
+			transform: scale(1);
+		}
+	}
 	@include media-breakpoint-up(md) {}
 
 	@include media-breakpoint-up(sm) {}

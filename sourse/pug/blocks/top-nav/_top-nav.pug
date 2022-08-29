@@ -1,6 +1,7 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
+		p Меню сайта
 mixin mob-mnu()
 	-
 		//- let path = require('path');
@@ -20,14 +21,44 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			.row
-				.col.order-lg-0.order-last
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
-					
-				.col-auto.d-lg-none
+		+e.container.container-fluid
+			+e.row.row
+				.col-auto
 					+menu-toggle()
+					.menu-mobile.menu-mobile--js
+						+b.toggle-menu-mobile--js
+							span
+						.menu-mobile__inner
+							+e.logo-wrap
+								+e.logo(href="#")
+									+img('img/svg/logo.svg')
+							+mnu()
+							+e.conultation
+								+e.img-wrap
+									+img('img/avatar.jpg')
+								p Получить бесплатную консультацию
+							+e.call(href="tel:+79046005803") +7 (904) 600-58-03
+							+soc()
+				.col
+					+e.logo-wrap
+						+e.logo(href="#")
+							+img('img/svg/logo.svg')
+						p Оффициально зарегистрированное на Кипре агентство с 2004 года
+					//- .menu-mobile.menu-mobile--js
+					//- 	.menu-mobile__inner
+					//- 		+mnu()
+				.col-auto
+					+soc()
+						+item-sos('viber')(style="--color:#8852C1")
+						+item-sos('telegram')(style="--color:#2FA6D9")
+						+item-sos('whatsapp')(style="--color:#00C958")
+				.col-auto.d-none.d-lg-block
+					+e.callBack
+						+e.working Сейчас работаем
+						a(href="tel:+79046005803") +7 (904) 600-58-03
+				.col-auto.d-none.d-lg-block
+					+e.conultation
+						+e.img-wrap
+							+img('img/avatar.jpg')
+						p Получить бесплатную консультацию
 	// end top-nav

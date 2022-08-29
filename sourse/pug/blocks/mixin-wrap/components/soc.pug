@@ -1,5 +1,5 @@
 mixin item-sos(icon, a='#')
-	+e.A.item(href= a target="_blank")
+	+e.A.item(href= a target="_blank")&attributes(attributes)
 		if block
 			block
 		else
@@ -10,7 +10,8 @@ mixin soc()
 		if block
 			block
 		else
-			each soc in social
-				+item-sos(soc)
+			+item-sos('whatsapp')(style="--color:#00C958")
+			+item-sos('telegram')(style="--color:#2FA6D9")
+			+item-sos('viber')(style="--color:#8852C1")
 
 //- /social buttons 
