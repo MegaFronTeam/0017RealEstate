@@ -40,13 +40,19 @@
 					--color: #{$body-color};
 				}
 				.icon-viber {
-					color: #8852C1;
+					@include media-breakpoint-up(md) {
+						color: #8852C1;
+					}
 				}
 				.icon-telegram {
-					color: #2FA6D9;
+					@include media-breakpoint-up(md) {
+						color: #2FA6D9;
+					}
 				}
 				.icon-whatsapp {
-					color: #00C958;
+					@include media-breakpoint-up(md) {
+						color: #00C958;
+					}
 				}
 				.top-nav {
 					&__logo {
@@ -56,6 +62,11 @@
 						}
 						img {
 							max-width: rem(68);
+						}
+					}
+					&__img-wrap {
+						&::before, &::after {
+							border-color: $body-color;
 						}
 					}
 				}

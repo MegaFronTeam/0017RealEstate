@@ -21,6 +21,9 @@
 	a{
 		display: block;
 		padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		&:hover {
+			color: $primary;
+		}
 	}
 }
 
@@ -125,6 +128,7 @@
 		color: #FFF;
 		top: 10px;
 		z-index: 9999; 
+		margin-right: 0 !important;
 		span {
 			--color: #ffffff;
 		}
@@ -152,6 +156,9 @@
 			&__logo {
 				margin-right: 0 ;
 				padding: 0;
+				img {
+					max-width: rem(87);
+				}
 			}
 			&__conultation {
 				flex-direction: column;
@@ -165,6 +172,9 @@
 			}
 			&__img-wrap {
 				margin-bottom: rem(20);
+				&::before, &::after {
+					border-color: $body-color;
+				}
 			}
 		}
 		.soc {

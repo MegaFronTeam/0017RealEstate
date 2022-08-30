@@ -1,0 +1,33 @@
+mixin sProfitable(data)
+	// start sProfitable
+	+b.SECTION.sProfitable.section#sProfitable.bg-wrap&attributes(attributes)
+		+img('img/svg/sProfitable-bg.svg').bg
+		.container
+			+b.section-title.text-center
+				h2 #[strong Почему выгодно] работать с нами
+				p Оффициально зарегистрированное на Кипре агентство с 2004 года
+			+e.row.row
+				mixin item(i, strong, text)
+					+e.item
+						+img(`img/svg/sProfitable-img-${i}.svg`)
+						p #[strong!= strong]
+							!= text
+				.col-md-6.col-lg-4
+					+item(1, 'Более 300 юридически проверенных объектов ' ,` в&nbsp;том числе эксклюзивных.`)
+				.col-md-6.col-lg-4
+					+item(2, 'Сопровождаем во&nbsp;всех вопросах: ', ' от переезда и&nbsp;устройства в&nbsp;школы и&nbsp;ВУЗы до юридических консультаций и&nbsp;управления недвижимостью.')
+				.col-md-6.col-lg-4
+					+item(3, 'Недвижимость напрямую ', ' от&nbsp;застройщиков без посредников.')
+				.col-md-6.col-lg-4
+					+item(4, 'Не&nbsp;требуется легализация Ваших денег. ', ' Недвижимость и&nbsp;банковский счет без&nbsp;налогового контроля! ВНЖ за&nbsp;14&nbsp;дней.')
+				.col-md-6.col-lg-4
+					+item(5, 'Недвижимость от&nbsp;29&nbsp;920&nbsp;фунтов. ', ' Приобретайте недвижимость по&nbsp;цене на&nbsp;20-30% ниже, чем у&nbsp;посредников.')
+				.col-md-6.col-lg-4
+					+item(6, 'Рассрочка до&nbsp;5&nbsp;лет под 0%. ', '<br>Первый взнос&nbsp;25%.')
+				.col-md-6.col-lg-4
+					+item(7, 'Выгодный кредит до&nbsp;20&nbsp;лет. ', '<br>Первый взнос 30-50%. Cтавка от&nbsp;5,5%.')
+				.col-md-6.col-lg-4
+					+item(8, 'Гарантированный доход от&nbsp;аренды до&nbsp;8% годовых. ', ' Получайте пассивный доход в&nbsp;британских фунтах!')
+				.col-md-6.col-lg-4
+					+item(9, 'Организуем онлайн-показ. ', '<br>Посмотрите объект внутри не&nbsp;выходя из&nbsp;дома!')
+	// end sProfitable'

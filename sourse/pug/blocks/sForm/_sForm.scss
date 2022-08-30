@@ -1,7 +1,12 @@
 
 	// start .sForm
-	.sForm {
-		 
+.sForm {
+	--sPT: #{rem(60)};
+	--sPB: #{rem(40)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(100)};
+		--sPB: #{rem(100)};
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

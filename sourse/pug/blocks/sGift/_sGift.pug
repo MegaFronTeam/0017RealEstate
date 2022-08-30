@@ -1,0 +1,21 @@
+mixin sGift(data)
+	// start sGift
+	+b.SECTION.sGift.section#sGift&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 #[strong Подарки] клиентам
+				p При покупке любого объекта недвижимости на Северном Кипре для всех членов семьи в подарок от нашего агенства
+			+e.row.row
+				mixin item(i, text)
+					+e.item
+						+img(`img/svg/sGift-img-${i}.svg`)
+						p!= text
+				.col-sm-6.col-lg-3
+					+item(1, 'Оформление<br>вида на жительство')
+				.col-sm-6.col-lg-3
+					+item(2, 'Оформление<br>банковского счета')
+				.col-sm-6.col-lg-3
+					+item(3, 'Оформление<br>водительского удостоверения')
+				.col-sm-6.col-lg-3
+					+item(4, 'Оформление<br>медицинской страховки')
+	// end sGift

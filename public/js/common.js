@@ -377,6 +377,25 @@ function eventHandler() {
 	});
 	// modal window
 
+	const headerBlockswiper = new Swiper('.headerBlock__slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		simulateTouch: false,
+		autoplay: {
+			delay: 4500,
+		},
+	});
+	const headerBlockTextswiper = new Swiper('.headerBlock__slider-txt--js', {
+		slidesPerView: 1,
+		spaceBetween: 2,
+		simulateTouch: false,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+	headerBlockTextswiper.controller.control = [headerBlockswiper];
+	headerBlockswiper.controller.control = headerBlockTextswiper;
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
