@@ -396,6 +396,26 @@ function eventHandler() {
 	});
 	headerBlockTextswiper.controller.control = [headerBlockswiper];
 	headerBlockswiper.controller.control = headerBlockTextswiper;
+
+	const gallerySliderswiper = new Swiper('.sSlider__gallery-slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		// enabled: false,
+		// breakpoints: {
+		// 	992: {
+		// 		enabled: true,
+		// 	}
+		// },
+		navigation: {
+			nextEl: '.sSlider__gallery-slider--js .swiper-button-next',
+			prevEl: '.sSlider__gallery-slider--js .swiper-button-prev',
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

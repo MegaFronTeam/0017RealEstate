@@ -1,0 +1,89 @@
+mixin sSlider(data)
+	// start sSlider
+	+b.SECTION.sSlider.section#sSlider&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 #[strong Недвижимость ] для отдыха и жизни
+				p а также для выгодной инвестиции
+			+e.row.row
+				.col-lg-7
+					+e.gallery-slider--js.swiper
+						.swiper-wrapper
+							-for(let i = 0; i< 9; i++)
+								+e.slide.swiper-slide
+									+e.full-size(data-fancybox="1" data-src="img/sSlider-img-1.jpg")
+										+icon('zoom')
+									+e.img-wrap
+										+img('img/sSlider-img-1.jpg')
+						.swiper-pagination
+						+arrow()
+				.col-lg-5
+					+e.content
+						.h4 Студия 48 м² в элитном комплексе в 5 минутах от пляжа
+						+e.label-row.row
+							.col-auto
+								+e.label--green Новая
+							.col-auto
+								+e.label ID 2136
+							.col-auto
+								+e.label 2025
+						+e.price-row.row
+							.col-auto
+								+e.price 54,500 £
+							.col-auto
+								+e.size 1,136 £ /m2
+							.col-auto
+								+input('£', 'select')
+						+e.adress 
+							+icon('map')
+							| Фамагуста / Лонг Бич
+						+e.advantage.d-lg-none
+							+e.advantage-item
+								p Площадь
+								+icon('square')
+								span 48м2
+							+e.advantage-item
+								p Спален
+								+icon('bedroom')
+								span 1
+							+e.advantage-item
+								p Ванные
+								+icon('bathroom')
+								span 1
+							+e.advantage-item
+								p До моря
+								+icon('sea')
+								span 1,3 км
+							+e.advantage-item
+								p Бассейн
+								+icon('pool')
+								span Есть
+						ul
+							li 1,3 км от песчаного пляжа
+							li Беспроцентная рассрочка до 84 месяцев
+							li Первоначальный взнос 35%. Остаток в беспроцентную рассрочку до 84 месяцев!
+				.col-lg-7.d-none.d-lg-block
+					+e.advantage
+						+e.advantage-item
+							p Площадь
+							+icon('square')
+							span 48м2
+						+e.advantage-item
+							p Спален
+							+icon('bedroom')
+							span 1
+						+e.advantage-item
+							p Ванные
+							+icon('bathroom')
+							span 1
+						+e.advantage-item
+							p До моря
+							+icon('sea')
+							span 1,3 км
+						+e.advantage-item
+							p Бассейн
+							+icon('pool')
+							span Есть
+				.col-lg-5
+					+e.btn.btn.btn-primary(href="#") заказать онлайн-просмотр
+	// end sSlider

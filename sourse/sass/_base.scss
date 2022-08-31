@@ -522,6 +522,9 @@ iframe {
 	--bs-btn-active-bg: #FFD27D;
 	--bs-btn-active-border-color: #FFD27D;
 	--bs-btn-padding-y: #{rem(19)};
+	@include media-breakpoint-up(md) {
+		--bs-btn-padding-y: #{rem(29)};
+	}
 }
 
 .section-title {
@@ -529,7 +532,7 @@ iframe {
 	@include media-breakpoint-up(md) {
 		margin-bottom: rem(60);
 	}
-	h2 {
+	h2, h3 {
 		position: relative;
 		margin-bottom: rem(20);
 		padding-bottom: rem(20);

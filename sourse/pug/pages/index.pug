@@ -15,6 +15,9 @@ include ../blocks/footer/_footer.pug
 include ../blocks/sProfitable/_sProfitable.pug
 include ../blocks/sInfo/_sInfo.pug
 include ../blocks/sGift/_sGift.pug
+include ../blocks/sOnlineDisplay/_sOnlineDisplay.pug
+include ../blocks/sWhy/_sWhy.pug
+include ../blocks/sSlider/_sSlider.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -32,6 +35,9 @@ block pagecontent
 		//- +topLine
 	+headerBlock 
 	+sProfitable
+	+sSlider
+	+sWhy
+	+sOnlineDisplay
 	+sInfo
 	+sGift
 	.background-wrap.bg-wrap

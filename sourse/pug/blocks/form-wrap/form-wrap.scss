@@ -15,6 +15,17 @@
  		width: 100%;
  		display: block;
  	}
+	&__policy {
+		color: #fff;
+		line-height: 1.43em;
+		a {
+			color: #fff;
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }
 
 

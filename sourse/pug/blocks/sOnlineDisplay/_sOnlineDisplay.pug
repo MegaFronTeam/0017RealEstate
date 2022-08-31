@@ -1,0 +1,15 @@
+mixin sOnlineDisplay(data)
+	// start sOnlineDisplay
+	+b.SECTION.sOnlineDisplay.section#sOnlineDisplay&attributes(attributes)
+		.container
+			.row
+				+e.col.col-lg-6
+					+b.section-title
+						h2 #[strong Онлайн-показ] недвижимости
+					p Наш сотрудник выедет в&nbsp;интересующие Вас населенные пункты Северного Кипра, и&nbsp;в&nbsp;онлайн-режиме по&nbsp;видеосвязи покажет все&nbsp;интересующие вас объекты, проконсультирует по&nbsp;вопросам приобретения недвижимости, легализации и&nbsp;адаптации на&nbsp;Северном Кипре, включая вопросы получения ВНЖ и&nbsp;гражданства. А&nbsp;также расскажет об&nbsp;эксклюзивных условиях покупки, рассрочки, кредитования и&nbsp;скидки до&nbsp;40%.
+					+img('img/iphone.png').phone
+					+e.btn(href="#").btn.btn-primary оставить заявку
+				.col-lg-6.d-none.d-lg-block
+					+e.bg.bg-wrap
+						+img('img/sOnlineDisplay-bg.png', 'bg').picture-bg
+	// end sOnlineDisplay

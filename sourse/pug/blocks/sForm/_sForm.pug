@@ -2,11 +2,27 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				h2 sForm
-				h2 sForm
-				h2 sForm
-				
-			.row
+			+e.row.row
+				.col-lg.order-1
+					+b.section-title
+						h2 #[strong Свяжитесь ] с нами
+						p Мы отправим Вам инструкцию по правильному подбору недвижимости по Северному Кипру
+				.col-lg-auto.order-3.order-lg-2
+					+e.callBack
+						+e.working Сейчас работаем
+						+e.phone(href="tel:+79046005803") +7 (904) 600-58-03
+						+e.order(href="#") Заказать звонок
+				.col-lg-8.ms-auto.me-auto.order-2.order-lg-3
+					+form-wrap()
+						+e.inner-row.row
+							.col-md-6
+								+input('Введите имя', 'text')
+							.col-md-6
+								+input('Телефон', 'tel')
+							.col-md-12
+								+input('Комментарий', 'textarea')
+							.col-md.order-last.order-md-0.text-center.text-md-start
+								+policy()
+							.col-md-auto
+								+e.BUTTON.btn.btn.btn-primary(type="submin") оставить заявку
 	// end sForm

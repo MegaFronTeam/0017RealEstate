@@ -180,7 +180,9 @@
 		.soc {
 			justify-content: center;
 			&__item {
+				background-color: var(--color) !important;
 				.icon {
+					color: #fff !important;
 					font-size: 14px;
 				}
 			}

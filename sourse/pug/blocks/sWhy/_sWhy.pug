@@ -1,0 +1,54 @@
+mixin sWhy(data)
+	// start sWhy
+	+b.SECTION.sWhy.section#sWhy.bg-wrap&attributes(attributes)
+		+img('img/svg/sProfitable-bg.svg', 'bg').picture-bg
+		+e.content-wrap.bg-wrap
+			+img('img/sWhy-bg.png').picture-bg.bg
+			.container
+				+b.section-title.text-center
+					h2 #[strong Почему наши клиенты выбирают] Северный Кипр
+				.row
+					+e.txt-col.col-lg-6.order-2.order-lg-1
+						+e.text Кипр называют &laquo;уголком земли, похожим на&nbsp;рай&raquo; и, поверьте, это не&nbsp;преувеличение. В&nbsp;этом неповторимом уголке Средиземноморья лето долгое и&nbsp;горячее, солнце каждый год светит 340&nbsp;дней, зима&nbsp;&mdash; умеренная с&nbsp;небольшим предсказуемым дождиком!
+						+e.text За&nbsp;тысячи лет много цивилизаций оставили след в&nbsp;развитии этого острова. Кипр&nbsp;&mdash; драгоценная находка, таинственная земля древних богов и&nbsp;богинь.
+					.col-lg-6.order-1.order-lg-2
+						+e.items-wrap
+							+e.item--black
+								+e.wrap
+									+e.headline Погода сейчас
+									+e.city
+										+img('img/sun.png')
+										| Никосия
+								+e.inner-row.row
+									.col
+										+e.weather-head День
+										+e.weather-body 34°C
+									.col
+										+e.weather-head Ночь
+										+e.weather-body 26°C
+							+e.item
+								+img('img/svg/sWhy-1.svg').img
+								+e.title Британское образование от 300 евро/мес
+							+e.item
+								+img('img/svg/sWhy-2.svg').img
+								+e.title Медицина европейского уровня по ценам России
+		.container
+			+e.footer-content
+				mixin item(i, text)
+					+e.item-wrap
+						+img(`img/svg/sWhy-${i}.svg`)
+						p!= text
+				+e.footer-row.row
+					.col-md-6.col-lg-4
+						+item(3, '320 солнечных дней в&nbsp;году&nbsp;&mdash; самый благоприятный для здоровья климат.')
+					.col-md-6.col-lg-4
+						+item(4, 'Безвизовый въезд&nbsp;&mdash; доступное получение ВНЖ за&nbsp;21&nbsp;день.')
+					.col-md-6.col-lg-4
+						+item(5, 'Аренда&nbsp;&mdash; от&nbsp;260&nbsp;фунтов/мес. Цена готовой 2-х комнатной квартиры от&nbsp;29, 950&nbsp;фунтов.')
+					.col-md-6.col-lg-4
+						+item(6, '100% отсутствие преступности и&nbsp;коррупции')
+					.col-md-6.col-lg-4
+						+item(7, 'Чистейшая экология.')
+					.col-md-6.col-lg-4
+						+item(8, 'Расходы на&nbsp;жизнь&nbsp;&mdash; около&nbsp;500&nbsp;евро/мес.')
+	// end sWhy
