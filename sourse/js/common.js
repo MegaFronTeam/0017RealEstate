@@ -456,20 +456,16 @@ function eventHandler() {
 			}).addClass("btn_animate");
 		}, 3000);
 	});
-	let changePrice = function() {
-		let selectElement = document.querySelector('.sSlider__input');
-		let selectElementOptions = document.querySelector('.sSlider__input').options;
-		selectElement.addEventListener('change', () => {
-			let price = document.querySelector('.sSlider__price');
-			let size = document.querySelector('.sSlider__size');
-			price.textContent = selectElementOptions[selectElementOptions.selectedIndex].dataset.price;
-			size.textContent = selectElementOptions[selectElementOptions.selectedIndex].dataset.smallprice;
+	let selectElementOptions = document.querySelectorAll('.sSlider__input');
+	for (const selectElementOption of selectElementOptions) {
+		selectElementOption.addEventListener('change', () => {
+			let value = selectElementOption.value;
+			let price = selectElementOption.closest(".sSlider__price-row").querySelector('.sSlider__price');
+			let size = selectElementOption.closest(".sSlider__price-row").querySelector('.sSlider__size');
+			price.innerHTML = selectElementOption[selectElementOption.selectedIndex].dataset.price + " " + value;
+			size.innerHTML = selectElementOption[selectElementOption.selectedIndex].dataset.smallprice + " " + value + " / m<sup>2</sup>";
 		});
 	}
-	changePrice();
-	// let changePriceSlide = document.querySelectorAll('.sSlider__main-slide');
-	// for (let i = 0; i < changePriceSlide.length; i++) {
-	// }
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

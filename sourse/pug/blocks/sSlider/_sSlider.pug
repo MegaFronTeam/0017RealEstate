@@ -35,14 +35,14 @@ mixin sSlider(data)
 											.col-auto
 												+e.price 54,500 £
 											.col-auto
-												+e.size 1,136 £ /m2
+												+e.size 1,136 £ /m<sup>2</sup>
 											.col-auto
 												//- +input('£', 'select')
 												+e.SELECT.input.form-select(name="select")
-													option(value="£" data-price='54,500 £' data-smallPrice='1,136 £ /m2') £
-													option(value="€" data-price='62,905 €' data-smallPrice='1,311 € /m2') €
-													option(value="₽" data-price='33,795,296 ₽' data-smallPrice='79,479 ₽ /m2') ₽
-													option(value="$" data-price='63,018 $' data-smallPrice='4,825 $ /m2') $
+													option(value="£" data-price='54,500' data-smallPrice='1,136') £
+													option(value="€" data-price='62,905' data-smallPrice='1,311') €
+													option(value="₽" data-price='33,795,296' data-smallPrice='79,479') ₽
+													option(value="$" data-price='63,018' data-smallPrice='4,825') $
 										+e.adress 
 											+icon('map')
 											| Фамагуста / Лонг Бич
