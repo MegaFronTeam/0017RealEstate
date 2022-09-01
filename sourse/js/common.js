@@ -35,7 +35,7 @@ const JSCCommon = {
 		function addData() {
 			linkModal.forEach(element => {
 				element.addEventListener('click', () => {
-					let modal = document.querySelector(element.getAttribute("href"));
+					let modal = document.querySelector("#" + element.dataset.src);
 					const data = element.dataset;
 
 					function setValue(val, elem) {
@@ -77,7 +77,6 @@ const JSCCommon = {
 			menu.classList.remove("active");
 			[document.body, document.querySelector('html')].forEach(el => el.classList.remove("fixed"));
 		}
-
 	},
 	mobileMenu() { 
 		const menu = document.querySelector(".menu-mobile--js");
@@ -93,8 +92,11 @@ const JSCCommon = {
 		window.addEventListener('resize', () => {
 			if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
 		}, { passive: true });
-	},
 
+		window.addEventListener('scroll', (e) => {  
+			this.closeMenu();
+		});
+	},
 	// tabs  .
 	tabscostume(tab) {
 		// const tabs = document.querySelectorAll(tab);
@@ -296,6 +298,7 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
+	JSCCommon.getCurrentYear('.year-js');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -381,7 +384,11 @@ function eventHandler() {
 	const headerBlockswiper = new Swiper('.headerBlock__slider--js', {
 		slidesPerView: 1,
 		spaceBetween: 0,
-		simulateTouch: false,
+		// simulateTouch: false,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
 		autoplay: {
 			delay: 4500,
 		},
@@ -465,7 +472,7 @@ function eventHandler() {
 			price.innerHTML = selectElementOption[selectElementOption.selectedIndex].dataset.price + " " + value;
 			size.innerHTML = selectElementOption[selectElementOption.selectedIndex].dataset.smallprice + " " + value + " / m<sup>2</sup>";
 		});
-	}
+	};
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

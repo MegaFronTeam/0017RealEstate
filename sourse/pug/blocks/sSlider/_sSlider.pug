@@ -7,7 +7,7 @@ mixin sSlider(data)
 				p а также для выгодной инвестиции
 			+e.slider--js.swiper
 				.swiper-wrapper
-					-for(let j = 0; j<5; j++)
+					mixin mainSlide(title="Студия 48 м² в элитном комплексе в 5 минутах от пляжа")
 						+e.main-slide.swiper-slide
 							+e.row.row
 								.col-lg-7
@@ -15,7 +15,7 @@ mixin sSlider(data)
 										.swiper-wrapper
 											-for(let i = 0; i< 9; i++)
 												+e.slide.swiper-slide
-													+e.full-size(data-fancybox="1" data-src="img/sSlider-img-1.jpg")
+													+e.full-size(data-fancybox=i data-src="img/sSlider-img-1.jpg")
 														+icon('zoom')
 													+e.img-wrap
 														+img('img/sSlider-img-1.jpg')
@@ -23,7 +23,7 @@ mixin sSlider(data)
 										+arrow()
 								.col-lg-5
 									+e.content
-										.h4 Студия 48 м² в элитном комплексе в 5 минутах от пляжа
+										.h4!= title
 										+e.label-row.row
 											.col-auto
 												+e.label--green Новая
@@ -94,7 +94,9 @@ mixin sSlider(data)
 											+icon('pool')
 											span Есть
 								+e.col-btn.col-lg-5
-									+e.btn.btn.btn-primary(href="#" data-src='modal-call' data-fancybox="modal").btn-js заказать онлайн-просмотр
+									+e.btn.btn.btn-primary(href="#" data-src='modal-call' data-fancybox="modal" data-order= `Осмотр - ${title}`).btn-js заказать онлайн-просмотр
+					-for(let j = 0; j<5; j++)
+						+mainSlide
 				+e.control
 					+arrow
 			+e.footer-content.text-center

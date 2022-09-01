@@ -11,16 +11,16 @@ mixin sForm()
 					+e.callBack
 						+e.working Сейчас работаем
 						+e.phone(href="tel:+79046005803") +7 (904) 600-58-03
-						+e.order(href="#" data-src='modal-call' data-fancybox="modal") Заказать звонок
+						+e.order(href="#" data-src='modal-call' data-fancybox="modal" data-order="Заказать звонок") Заказать звонок
 				.col-lg-8.ms-auto.me-auto.order-2.order-lg-3
 					+form-wrap()
 						+e.inner-row.row
 							.col-md-6
-								+input('Введите имя', 'text', '', 'name')
+								+input('Введите имя', 'text', '', 'name')(required)
 							.col-md-6
-								+input('Телефон', 'tel')
+								+input('Телефон', 'tel')(required)
 							.col-md-12
-								+input('Комментарий', 'textarea', '', 'comment')
+								+input('Комментарий', 'textarea', '', 'comment')(required)
 							.col-md.order-last.order-md-0.text-center.text-md-start
 								+policy()
 							.col-md-auto

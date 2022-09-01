@@ -72,8 +72,11 @@
 	}
 
 	span:after {
-		bottom: 21px;
+		bottom: 17.5px;
 		transform: rotate3d(0,0,1, calc(-1 * var(--rotate,0)));
+		@include media-breakpoint-up(md) {
+			bottom: 21px;
+		}
 	}
 	// span,
 	span:after,
