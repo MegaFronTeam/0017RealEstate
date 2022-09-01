@@ -21,7 +21,9 @@
 		font-family: $font-family-monospace;
 		color: #fff;
 		text-align: center;
+		font-size: rem(15);
 		@include media-breakpoint-up(md) {
+			font-size: rem(16);
 			text-align: left;
 		}
 		a {

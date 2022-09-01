@@ -23,7 +23,7 @@
 		max-width: 100%;
 		left: 50%;
 		transform: translateX(-50%);
-		top: rem(230);
+		top: rem(150);
 		height: auto;
 		@include media-breakpoint-up(lg) {
 			top: unset;
@@ -34,6 +34,11 @@
 		margin-bottom: rem(160);
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(60);
+		}
+		h2 {
+			@include media-breakpoint-down(md) {
+				font-size: rem(30);
+			}
 		}
 	}
 	&__col{
@@ -113,6 +118,7 @@
 		// margin-bottom: rem(5);
 		@include media-breakpoint-down(sm) {
 			font-size: rem(14);
+			margin-bottom: 9px;
 		}
 	}
 	&__weather-body {
