@@ -10,12 +10,17 @@ mixin modal()
 			+form-wrap
 				+input("Введите имя", 'text', '', 'name')(required)  
 				+input("Телефон", 'tel')(required)  
-				+e.BUTTON.btn.btn.btn-primary(type="submit"  ) оставить заявку
+				+e.BUTTON.btn.btn.btn-primary.modal-close-js(type="submit"  ) оставить заявку
 				+policy()
 			+e.call-us 
 				p Связаться с менеджером
 				+e.phone(href="tel:+79046005803") +7 (904) 600-58-03
 				+soc
 	// #modal-call
-	
+	div(id="modal-thanks"  style="display: none" )
+		+b.modal-win.text-center
+			+b.section-title.text-center
+				.h4 #[strong Спасибо ] за обращение!
+				p В ближайшее время мы свяжемся с Вами
+			+e.btn(href="#").btn.btn-primary.modal-close-js Закрыть
 	// end modals
