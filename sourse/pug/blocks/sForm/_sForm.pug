@@ -16,11 +16,11 @@ mixin sForm()
 					+form-wrap()
 						+e.inner-row.row
 							.col-md-6
-								+input('Введите имя', 'text')
+								+input('Введите имя', 'text', '', 'name')
 							.col-md-6
 								+input('Телефон', 'tel')
 							.col-md-12
-								+input('Комментарий', 'textarea')
+								+input('Комментарий', 'textarea', '', 'comment')
 							.col-md.order-last.order-md-0.text-center.text-md-start
 								+policy()
 							.col-md-auto

@@ -8,8 +8,8 @@ mixin modal()
 				.h3 #[strong Заявка на подбор ] объекта
 				p Наш менеджер свяжется с&nbsp;Вами, уточнит требования и&nbsp;бюджет, подготовит и&nbsp;вышлет подборку из&nbsp;20-30 наиболее подходящих для вас объектов.
 			+form-wrap
-				+input("Введите имя")(required)  
-				+input("Телефон")(required)  
+				+input("Введите имя", 'text', '', 'name')(required)  
+				+input("Телефон", 'tel')(required)  
 				+e.BUTTON.btn.btn.btn-primary(type="submit"  ) оставить заявку
 				+policy()
 			+e.call-us 

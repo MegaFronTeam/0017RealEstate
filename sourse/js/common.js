@@ -183,6 +183,7 @@ const JSCCommon = {
 			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
 			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
 			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+			th.find('.utm_content').val(decodeURIComponent(gets['utm_content'] || ''));
 			$.ajax({
 				url: 'action.php',
 				type: 'POST',
@@ -292,7 +293,7 @@ function eventHandler() {
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
-	// JSCCommon.sendForm();
+	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
@@ -455,6 +456,20 @@ function eventHandler() {
 			}).addClass("btn_animate");
 		}, 3000);
 	});
+	let changePrice = function() {
+		let selectElement = document.querySelector('.sSlider__input');
+		let selectElementOptions = document.querySelector('.sSlider__input').options;
+		selectElement.addEventListener('change', () => {
+			let price = document.querySelector('.sSlider__price');
+			let size = document.querySelector('.sSlider__size');
+			price.textContent = selectElementOptions[selectElementOptions.selectedIndex].dataset.price;
+			size.textContent = selectElementOptions[selectElementOptions.selectedIndex].dataset.smallprice;
+		});
+	}
+	changePrice();
+	// let changePriceSlide = document.querySelectorAll('.sSlider__main-slide');
+	// for (let i = 0; i < changePriceSlide.length; i++) {
+	// }
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
