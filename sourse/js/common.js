@@ -400,12 +400,6 @@ function eventHandler() {
 	const gallerySliderswiper = new Swiper('.sSlider__gallery-slider--js', {
 		slidesPerView: 1,
 		spaceBetween: 0,
-		// enabled: false,
-		// breakpoints: {
-		// 	992: {
-		// 		enabled: true,
-		// 	}
-		// },
 		navigation: {
 			nextEl: '.sSlider__gallery-slider--js .swiper-button-next',
 			prevEl: '.sSlider__gallery-slider--js .swiper-button-prev',
@@ -415,6 +409,51 @@ function eventHandler() {
 			type: 'bullets',
 			clickable: true,
 		},
+	});
+	let mainSlider = document.querySelector('.sSlider__slider--js');
+	const mainSliderswiper = new Swiper('.sSlider__slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 60,
+		enabled: false,
+		// grid: {
+		// 	fill: 'column',
+		// },
+		breakpoints: {
+			992: {
+				enabled: true,
+			}
+		},
+		navigation: {
+			nextEl: '.sSlider__slider--js .sSlider__control .swiper-button-next',
+			prevEl: '.sSlider__slider--js .sSlider__control .swiper-button-prev',
+		},
+	});
+	$(".btn-primary,  .btn-js").each(function () {
+		var B = $(this);
+		var A, C, z, D;
+		setInterval(function () {
+			if (B.find(".animate-js").length === 0) {
+				B.prepend("<span class='animate-js'></span>");
+			}
+
+			A = B.find(".animate-js");
+			A.removeClass("btn_animate");
+
+			if (!A.height() && !A.width()) {
+				C = Math.max(B.outerWidth(), B.outerHeight());
+				A.css({
+					height: C,
+					width: C
+				});
+			}
+
+			z = Math.round(Math.random() * A.width() - A.width() / 2);
+			D = Math.round(Math.random() * A.height() - A.height() / 2);
+			A.css({
+				top: D + "px",
+				left: z + "px"
+			}).addClass("btn_animate");
+		}, 3000);
 	});
 };
 if (document.readyState !== 'loading') {

@@ -559,3 +559,29 @@ iframe {
 		opacity: .2;
 	}
 }
+
+.animate-js {
+	display: block;
+	background: rgba(255, 255, 255, .3);
+	border-radius: 100%; 
+	transform: scale(0);
+	z-index: 2 !important;
+	position: absolute !important;
+}
+
+.btn_animate { 
+	animation: .65s linear ripple;
+	animation-delay: 2s;
+}
+
+.btn-primary{
+	position: relative;
+	overflow: hidden;
+}
+
+@keyframes ripple {
+	100% {
+		opacity: 0; 
+		transform: scale(2.5)
+	}
+}

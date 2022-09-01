@@ -110,8 +110,12 @@
 			--swiperBgDef: transparent;
 			--swiperBorderColorDefHover: transparent;
 			--swiperBgDefHover: transparent;
+			--swiperColorDefHover: #fff;
 			.icon {
 				font-size: rem(24);
+				&:hover {
+					opacity: .85;
+				}
 			}
 			&-prev {
 				right: 24px;

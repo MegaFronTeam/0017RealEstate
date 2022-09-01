@@ -11,7 +11,7 @@ mixin sForm()
 					+e.callBack
 						+e.working Сейчас работаем
 						+e.phone(href="tel:+79046005803") +7 (904) 600-58-03
-						+e.order(href="#") Заказать звонок
+						+e.order(href="#" data-src='modal-call' data-fancybox="modal") Заказать звонок
 				.col-lg-8.ms-auto.me-auto.order-2.order-lg-3
 					+form-wrap()
 						+e.inner-row.row
@@ -24,5 +24,5 @@ mixin sForm()
 							.col-md.order-last.order-md-0.text-center.text-md-start
 								+policy()
 							.col-md-auto
-								+e.BUTTON.btn.btn.btn-primary(type="submin") оставить заявку
+								+e.BUTTON.btn.btn.btn-primary(type="submit").btn-js оставить заявку
 	// end sForm
