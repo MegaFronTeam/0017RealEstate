@@ -8,8 +8,16 @@ html(lang="ru")
 
 		block title
 			title title
-		meta(name="description", content="о чем страница")
+		meta(name="description", content= 'Недвижимость Северного Кипра: продажа и инвестиции - ')
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		<meta name="format-detection" content="telephone=no">
+		meta(property="og:title" content= '«Leverage Investments»')
+		meta(property="og:url" content= 'kipr.life')
+		meta(property="og:type" content="website")
+		meta(property="og:description" content= 'Недвижимость Северного Кипра: продажа и инвестиции - ')
+		meta(property="og:image" content="/img/OG-image.png")
+		meta(property="og:image:width" content="1280")
+		meta(property="og:image:height" content="670")
 		//- meta(name="viewport", content="width=device-width, shrink-to-fit=no")
 		//- meta(name="viewport",  content="width=575,   maximum-scale=1 , user-scalable=0, shrink-to-fit=no")
 		//- script.
@@ -28,8 +36,17 @@ html(lang="ru")
 		//- 		 w();
 		//- 		}, { passive: true });
 		//- 	}
+
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
 		meta(name="viewport", content="width=device-width,initial-scale=1.0, shrink-to-fit=no, user-scalable=no")
-		link(type="image/ico", href='img/favicon.ico', rel='shortcut icon') 
+		//- link(type="image/ico", href='img/favicon.ico', rel='shortcut icon') 
 		<meta name="format-detection" content="telephone=no"> 
 		+allcss()
 	block variables

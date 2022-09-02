@@ -550,6 +550,7 @@ iframe {
 	}
 	p {
 		font-family: $font-family-monospace;
+		font-style: italic;
 	}
 }
 
@@ -583,5 +584,11 @@ iframe {
 	100% {
 		opacity: 0; 
 		transform: scale(2.5)
+	}
+}
+
+.compensate-for-scrollbar {
+	.socials {
+		right: 17px;
 	}
 }

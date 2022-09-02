@@ -1,3 +1,26 @@
+mixin advantageItem(icon, title, num)
+	+e.advantage-item
+		p!=title
+		+icon(icon)
+		span!= num
+	//- +e.advantage
+		//- +e.advantage-item
+		//- 	p Спален
+		//- 	+icon('bedroom')
+		//- 	span 1
+		//- +e.advantage-item
+		//- 	p Ванные
+		//- 	+icon('bathroom')
+		//- 	span 1
+		//- +e.advantage-item
+		//- 	p До моря
+		//- 	+icon('sea')
+		//- 	span 1,3 км
+		//- +e.advantage-item
+		//- 	p Бассейн
+		//- 	+icon('pool')
+		//- 	span Есть
+
 mixin sSlider(data)
 	// start sSlider
 	+b.SECTION.sSlider.section#sSlider&attributes(attributes)
@@ -9,18 +32,18 @@ mixin sSlider(data)
 				+e.control
 					+arrow
 				.swiper-wrapper
-					mixin mainSlide(title="Студия 48 м² в элитном комплексе в 5 минутах от пляжа")
+					mixin mainSlide(label1, label2, label3, pricePound, smallPricePound, priceEur, smallPriceEur, priceRub, smallPriceRub, priceUsd, smallPriceUsd, adress, title="Студия 48 м² в элитном комплексе в 5 минутах от пляжа", slide, num, ...items)
 						+e.main-slide.swiper-slide
 							+e.row.row
 								.col-lg-7
 									+e.gallery-slider--js.swiper
 										.swiper-wrapper
-											-for(let i = 0; i< 9; i++)
+											-for(let i = 1; i< num; i++)
 												+e.slide.swiper-slide
-													+e.full-size(data-fancybox=i data-src="img/sSlider-img-1.jpg")
+													+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/sSlider-img-${slide}-${i}.jpg`)
 														+icon('zoom')
 													+e.img-wrap
-														+img('img/sSlider-img-1.jpg')
+														+img(`img/sSlider-img-${slide}-${i}.jpg`)
 										.swiper-pagination
 										+arrow()
 								.col-lg-5
@@ -28,77 +51,79 @@ mixin sSlider(data)
 										.h4!= title
 										+e.label-row.row
 											.col-auto
-												+e.label--green Новая
+												+e.label--green!= label1
 											.col-auto
-												+e.label ID 2136
+												+e.label!= label2
 											.col-auto
-												+e.label 2025
+												+e.label!= label3
 										+e.price-row.row
 											.col-auto
-												+e.price 54,500 £
+												+e.price!= pricePound
+													| 
+													| £
 											.col-auto
-												+e.size 1,136 £ /m<sup>2</sup>
+												+e.size 
+													!= smallPricePound 
+													| 
+													| £
+													| / m<sup>2</sup>
 											.col-auto
 												//- +input('£', 'select')
 												+e.SELECT.input.form-select(name="select")
-													option(value="£" data-price='54,500' data-smallPrice='1,136') £
-													option(value="€" data-price='62,905' data-smallPrice='1,311') €
-													option(value="₽" data-price='33,795,296' data-smallPrice='79,479') ₽
-													option(value="$" data-price='63,018' data-smallPrice='4,825') $
+													option(value="£" data-price=pricePound data-smallPrice=smallPricePound ) £
+													option(value="€" data-price=priceEur data-smallPrice=smallPriceEur ) €
+													option(value="₽" data-price=priceRub data-smallPrice=smallPriceRub ) ₽
+													option(value="$" data-price=priceUsd data-smallPrice=smallPriceUsd ) $
 										+e.adress 
 											+icon('map')
-											| Фамагуста / Лонг Бич
+											!= adress
 										+e.advantage.d-lg-none
-											+e.advantage-item
-												p Площадь
-												+icon('square')
-												span 48м2
-											+e.advantage-item
-												p Спален
-												+icon('bedroom')
-												span 1
-											+e.advantage-item
-												p Ванные
-												+icon('bathroom')
-												span 1
-											+e.advantage-item
-												p До моря
-												+icon('sea')
-												span 1,3 км
-											+e.advantage-item
-												p Бассейн
-												+icon('pool')
-												span Есть
+											block
 										ul
-											li 1,3 км от песчаного пляжа
-											li Беспроцентная рассрочка до 84 месяцев
-											li Первоначальный взнос 35%. Остаток в беспроцентную рассрочку до 84 месяцев!
+											each item in items
+												li!= item
 								.col-lg-7.d-none.d-lg-block
 									+e.advantage
-										+e.advantage-item
-											p Площадь
-											+icon('square')
-											span 48м2 
-										+e.advantage-item
-											p Спален
-											+icon('bedroom')
-											span 1
-										+e.advantage-item
-											p Ванные
-											+icon('bathroom')
-											span 1
-										+e.advantage-item
-											p До моря
-											+icon('sea')
-											span 1,3 км
-										+e.advantage-item
-											p Бассейн
-											+icon('pool')
-											span Есть
+										block
 								+e.col-btn.col-lg-5
 									+e.btn.btn.btn-primary(href="#" data-src='modal-call2' data-fancybox="modal" data-order= `Осмотр - ${title}`).btn-js заказать онлайн-просмотр
 					-for(let j = 0; j<5; j++)
-						+mainSlide
+						+mainSlide('Новая', 'ID 2136', '2025', '54,500', '1,136', '63,232', '1,318', '3,811,189', '79,400', '62,904', '1,311', "Фамагуста / Лонг Бич", 'Студия 48 м² в элитном комплексе в 5 минутах от пляжа', 1, 20, '1,3 км от песчаного пляжа', 'Беспроцентная рассрочка до 84 месяцев', 'Первоначальный взнос 35%. Остаток в беспроцентную рассрочку до 84 месяцев!')
+							+advantageItem('square', 'Площадь', '48м2')
+							+advantageItem('bedroom', 'Спален', '1')
+							+advantageItem('bathroom', 'Ванные', '1')
+							+advantageItem('sea', 'До моря', '1,3 км')
+							+advantageItem('pool', 'Бассейн', 'Есть')
+						+mainSlide('Эксклюзивное право продажи', 'ID1929', 'Готово', '56,000', '747', '64,973', '867', '3,916,084', '52,215', '64,635', '862', "Кирения / Лапта", '3-комнатные апартаменты 75 м² с собственным участком земли в 5 минутах от пляжа', 2, 12, '1 км от моря', 'Полная меблировка', 'Бытовая техника включена в стоимость', '100% при подписании договора купли-продажи')
+							+advantageItem('square', 'Площадь', '75м2')
+							+advantageItem('bedroom', 'Спален', '2')
+							+advantageItem('bathroom', 'Ванные', '1')
+							+advantageItem('sea', 'До моря', '1 км')
+							+advantageItem('pool', 'Бассейн', 'Нет ')
+						+mainSlide('Новая', 'ID 1690', 'Июль 2025', '64,154', '1,234', '74,433', '1,432', '4,486,294', '86,275', '74,047', '1,424', "Фамагуста / Лонг Бич", '1-комнатные апартаменты 52м² + 8,2м² терраса в СПА-комплексе в 600 метрах от песчаного пляжа', 3, 20, '600 м до моря', '7м² терраса в СПА-комплексе', 'Первоначальный взнос 30%. Беспроцентная рассрочка до 6 лет')
+							+advantageItem('square', 'Площадь', '52м2')
+							+advantageItem('bedroom', 'Спален', '1')
+							+advantageItem('bathroom', 'Ванные', '1')
+							+advantageItem('sea', 'До моря', '600 м')
+							+advantageItem('pool', 'Бассейн', 'Есть')
+						+mainSlide('Новая', 'ID 2141', 'Декабрь 2022', '65,000', '1,548', '75,415', '1,796', '4,545,455', '108,226', '75,023', '1,787', "Кирения / Эсентепе", 'Студия 42 м² с террасой в 33 м² в элитном комплексе в 100 метрах от собственного пляжа', 4, 9, '100 м от моря', '100% при подписании договора купли-продажи')
+							+advantageItem('square', 'Площадь', '42м2')
+							+advantageItem('bedroom', 'Спален', '1')
+							+advantageItem('bathroom', 'Ванные', '1')
+							+advantageItem('sea', 'До моря', '100 м')
+							+advantageItem('pool', 'Бассейн', 'Есть')
+						+mainSlide('Новая', 'ID 2157', 'Сентябрь 2024', '169,000', '1,006', '196,078', '1,168', '11,818,182', '70,347', '195,060', '1,162', "Фамагуста / Енибогазичи", '4-комнатные дуплекс апартаменты 168 м² в 5 минутах от пляжа', 5, 5, '1 км от моря', 'Первоначальный взнос 30%. Беспроцентная рассрочка до 32 месяцев.')
+							+advantageItem('square', 'Площадь', '168м2')
+							+advantageItem('bedroom', 'Спален', '3')
+							+advantageItem('bathroom', 'Ванные', '2')
+							+advantageItem('sea', 'До моря', '1 км')
+							+advantageItem('pool', 'Бассейн', 'Есть')
+						+mainSlide('Новая', 'ID 2150', 'Декабрь 2023', '135,000', '1,164', '156,631', '1,351', '9,440,559', '81,385', '155,817', '1,344', "Фамагуста / Енибогазичи", '4-комнатные апартаменты 116 м² в 5 минутах от моря ', 6, 20, '1 км от моря', 'Первоначальный взнос 30%. Беспроцентная рассрочка до 30 месяцев.')
+							+advantageItem('square', 'Площадь', '116м2')
+							+advantageItem('bedroom', 'Спален', '3')
+							+advantageItem('bathroom', 'Ванные', '2')
+							+advantageItem('sea', 'До моря', '1 км')
+							+advantageItem('pool', 'Бассейн', 'Нет') 
 				//- +e.control
 				//- 	+arrow
 			+e.footer-content.text-center

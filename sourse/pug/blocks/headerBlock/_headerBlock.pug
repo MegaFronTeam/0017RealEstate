@@ -3,11 +3,13 @@ mixin headerBlock()
 	+b.headerBlock.section#headerBlock.bg-wrap&attributes(attributes)
 		+e.slider--js.swiper.picture-bg
 			.swiper-wrapper
-				-for(let i=0; i<3; i++)
+				-for(let i=1; i<=4; i++)
 					+e.slide.swiper-slide
+						//- picture
+						//- 	source(media="(min-width:400px)" srcset=`img/header-bg-${i}.jpg`)
+						//- 	+img(`img/header-bg-sm-${i}.jpg`)
 						picture
-							<source media="(min-width:400px)" srcset="img/header-bg.jpg">
-							+img('img/header-bg-sm.jpg')
+							+img(`img/header-bg-${i}.jpg`)
 		+e.container.container
 			+b.section-wrap
 				h1 #[strong Недвижимость] Северного Кипра
@@ -16,10 +18,14 @@ mixin headerBlock()
 			+e.slider-wrap
 				+e.slider-txt--js.swiper
 					.swiper-wrapper
-						-for(let i=0; i<3; i++)
-							+e.slide.swiper-slide
-								+e.title Древний город Саламис
-								p Северный Кипр
+						mixin slide(title, text)
+							+e.slide-txt.swiper-slide
+								+e.title!= title
+								p!= text
+						+slide('Древний город Саламис', 'Северный Кипр')
+						+slide('Аббатство Белапаис', 'Северный Кипр')
+						+slide('Замок Гирне', 'Северный Кипр')
+						+slide('Замок Кантара', 'Северный Кипр')
 					+arrow()
 			+e.scroll-down(href="#sProfitable") Листайте вниз
 
