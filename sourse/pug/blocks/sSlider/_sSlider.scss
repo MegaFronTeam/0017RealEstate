@@ -17,7 +17,9 @@
 		}
 	}
 	.section-title{
-		
+		@include media-breakpoint-down(xxl) {
+			margin-bottom: rem(40);
+		}
 	}
 	&__col{
 
@@ -34,16 +36,46 @@
 		& > .swiper-wrapper {
 			@include media-breakpoint-down(lg) {
 				flex-wrap: wrap;
+				transform: none !important;
 			}
 		}
 	}
 	&__control {
+		@include media-breakpoint-down(xxl) {
+			display: flex;
+			justify-content: center;
+			margin-bottom: rem(40);
+		}
 		.swiper-button-hand {
 			--swiperArrowPosition: calc(-180px);
 			--swiperArrowSize: 60px;
 			border: none;
 			color: $body-color;
+			&:hover {
+				&:before {
+					border-color: $primary;
+				}
+			}
+			@include media-breakpoint-down(xxl) {
+				position: relative;
+				top: unset;
+				bottom: unset;
+				right: unset;
+				left: unset;
+			}
+			@include media-breakpoint-up(xxl) {
+				top: -100px;
+				&:after {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 100vh;
+					height: 614px;
+					top: -277px;
+				}
+			}
 			&:before {
+				@include mt;
 				content: '';
 				position: absolute;
 				display: block;
@@ -54,20 +86,15 @@
 				height: 5px;
 				border-radius: 50%;
 			}
-			&:after {
-				content: '';
-				position: absolute;
-				display: block;
-				width: 100vh;
-				height: 614px;
-				top: -277px;
-			}
 			&-next {
 				&:after {
 					left: -60px;
 				}
 			}
 			&-prev {
+				@include media-breakpoint-down(xxl) {
+					margin-right: rem(20);
+				}
 				&:after {
 					right: -60px;
 				}
@@ -121,9 +148,9 @@
 			}
 			svg {
 				font-size: rem(16);
-				fill: none;
-				stroke: currentColor;
-				stroke-width: 2px;
+				// fill: none;
+				// stroke: currentColor;
+				// stroke-width: 2px;
 				@include media-breakpoint-up(lg) {
 					font-size: rem(24);
 				}
@@ -180,6 +207,7 @@
 			letter-spacing: -1px;
 			line-height: 1.33em;
 			max-width: rem(400);
+			margin-bottom: rem(16);
 			@include media-breakpoint-down(md) {
 				font-size: rem(20);
 			}
@@ -214,10 +242,10 @@
 	}
 	&__label-row {
 		--bs-gutter-x: #{rem(5)};
-		margin-bottom: rem(15);
-		@include media-breakpoint-up(lg) {
-			margin-bottom: rem(20);
-		}
+		// margin-bottom: rem(30);
+		margin-bottom: rem(20);
+		// @include media-breakpoint-up(lg) {
+		// }
 	}
 	&__label {
 		padding: rem(3) rem(10);
@@ -249,7 +277,7 @@
 		font-weight: 700;
 		padding: rem(6.5) rem(10);
 		background-color: $primary;
-		letter-spacing: -1px;
+		// letter-spacing: -1px;
 		@include media-breakpoint-up(lg) {
 			font-size: rem(24);
 			padding: rem(9) rem(15);
@@ -424,8 +452,9 @@
 		font-size: rem(20);
 		font-weight: 600;
 		margin-bottom: rem(20);
-		&:not(:hover) {
-			color: $body-color;
+		color: $body-color;
+		&:hover {
+			color: $primary;
 		}
 	}
 	&__col-btn {

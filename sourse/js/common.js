@@ -385,6 +385,7 @@ function eventHandler() {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		// simulateTouch: false,
+		loop: true,
 		effect: "fade",
 		fadeEffect: {
 			crossFade: true
@@ -397,6 +398,11 @@ function eventHandler() {
 		slidesPerView: 1,
 		spaceBetween: 2,
 		simulateTouch: false,
+		loop: true,
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true
+		},
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -408,6 +414,8 @@ function eventHandler() {
 	const gallerySliderswiper = new Swiper('.sSlider__gallery-slider--js', {
 		slidesPerView: 1,
 		spaceBetween: 0,
+		loop: true,
+		enabled: true,
 		navigation: {
 			nextEl: '.sSlider__gallery-slider--js .swiper-button-next',
 			prevEl: '.sSlider__gallery-slider--js .swiper-button-prev',
@@ -423,11 +431,13 @@ function eventHandler() {
 		slidesPerView: 1,
 		spaceBetween: 60,
 		enabled: false,
+		loop: false,
 		// grid: {
 		// 	fill: 'column',
 		// },
 		breakpoints: {
 			992: {
+				loop: true,
 				enabled: true,
 			}
 		},

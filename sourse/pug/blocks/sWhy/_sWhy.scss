@@ -7,6 +7,12 @@
 		--sPT: #{rem(100)};
 		--sPB: #{rem(100)};
 	}
+	.sProfitable-bg {
+		height: auto;
+		width: auto;
+		top: unset;
+		bottom: 0;
+	}
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
@@ -140,6 +146,7 @@
 		flex-direction: column;
 		@include media-breakpoint-down(lg) {
 			text-align: center;
+			align-items: center;
 		}
 	}
 	&__text {
@@ -158,7 +165,9 @@
 			}
 		}
 		&:nth-child(2) {
-			margin-left: auto;
+			@include media-breakpoint-up(lg) {
+				margin-left: auto;
+			}
 		}
 	}
 	&__inner-row {

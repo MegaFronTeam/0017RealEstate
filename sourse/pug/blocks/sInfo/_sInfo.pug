@@ -9,12 +9,15 @@ mixin sInfo(data)
 						+b.section-title
 							h2 #[strong Огромное ] разнообразие
 							p жилой и коммерческой недвижимости на Северном Кипре
+						picture.d-lg-none
+							source(media="(min-width: 992px)", srcset="img/sInfo-img-1.jpg")
+							+img('img/sInfo-img-sm-1.jpg')
 						ul
 							li Комфортабельные и уютные квартиры и офисы с видом на море
 							li Обустроенные по последнему слову техники и дизайна двух и трехэтажные особняки и коттеджи с большими бассейнами и сочными экзотическими садами
 							li Меблированная элитная недвижимость Северного Кипра для постоянного и временного проживания
 							li Шикарные пентхаусы и комфортабельные виллы рядом с полями для конных прогулок и гольфа
-					.col-lg-6.order-1.order-lg-2.text-lg-end
+					.col-lg-6.order-1.order-lg-2.text-lg-end.d-none.d-lg-block
 						picture 
 							source(media="(min-width: 992px)", srcset="img/sInfo-img-1.jpg")
 							+img('img/sInfo-img-sm-1.jpg')
@@ -26,6 +29,9 @@ mixin sInfo(data)
 						+b.section-title
 							h2 #[strong Теплое и безопасное ] место
 							p где можно растить здоровых детей и быть спокойным за свою семью
+						picture.d-lg-none
+							source(media="(min-width: 992px)", srcset="img/sInfo-img-2.jpg")
+							+img('img/sInfo-img-sm-2.jpg')
 						ul
 							li Безвизовый въезд и низкая стоимость недвижимости
 							li Оформление недвижимости в собственность иностранным гражданам, английское право
@@ -35,7 +41,7 @@ mixin sInfo(data)
 							li 340 солнечных дней в году, лето до конца ноября и мягкая зима 16-18 С°
 							li Дайвинг, охота, рыбалка, круизы, парапланеризм, пейнтбол, прогулки на лошадях, гольф, боулинг, картинг, сафари на джипах
 							li Античные и средневековые памятники архитектуры
-					.col-lg-6.order-1.text-lg-end
+					.col-lg-6.order-1.text-lg-end.d-none.d-lg-block
 						picture 
 							source(media="(min-width: 992px)", srcset="img/sInfo-img-2.jpg")
 							+img('img/sInfo-img-sm-2.jpg')
@@ -47,6 +53,9 @@ mixin sInfo(data)
 						+b.section-title
 							h2 #[strong Выгодные ] инвестиции
 							p в недвижимость Северного Кипра на лучших условиях
+						picture.d-lg-none
+							source(media="(min-width: 992px)", srcset="img/sInfo-img-3.jpg")
+							+img('img/sInfo-img-sm-3.jpg')
 						ul
 							li Беспроцентная рассрочка на этапе строительства сроком до 3 лет с минимальным первым платежом
 							li Гарантия на строительство 5 лет
@@ -55,7 +64,7 @@ mixin sInfo(data)
 							li При покупке квартиры - мягкая мебель и бытовая техника в подарок
 							li Кредит на срок до 12 лет без первоначального взноса, от 6% до 14% годовых, без справок и поручителей
 							li Сдаём в аренду Вашу недвижимость, отвечаем за подбор Клиента по Вашим требованиям, переводим арендную плату в любую точку мира, проверяем состояния квартиры и имущества
-					.col-lg-6.order-1.order-lg-2.text-lg-end
+					.col-lg-6.order-1.order-lg-2.text-lg-end.d-none.d-lg-block
 						picture 
 							source(media="(min-width: 992px)", srcset="img/sInfo-img-3.jpg")
 							+img('img/sInfo-img-sm-3.jpg')

@@ -5,12 +5,12 @@
 	// min-height: 100vh;
 	// height: calc(var(--vh, 1vh) * 100 - 80px);
 	background-color: $body-color;
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up(xxl) {
 		--sPT: #{rem(269)};
 		--sPB:#{rem(0)};
 		// height: calc((var(--vh, 1vh) * 100) - rem(134));
 	}
-	@include media-breakpoint-only(xl) {
+	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(129.600)};
 	}
 	&__container {
@@ -68,7 +68,10 @@
 			text-align: left;
 			margin-bottom: rem(90);
 		}
-		@include media-breakpoint-only(xl) {
+		@include media-breakpoint-up(xxl) {
+			margin-bottom: rem(90);
+		}
+		@include media-breakpoint-up(lg) {
 			margin-bottom: 0;
 		}
 		h1 {
@@ -80,7 +83,7 @@
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(30);
 			}
-			@include media-breakpoint-only(xl) {
+			@include media-breakpoint-up(lg) {
 				font-size: rem(57);
 				margin-bottom: rem(25);
 			}
@@ -130,14 +133,14 @@
 			--swiperBorderColorDefHover: transparent;
 			--swiperBgDefHover: transparent;
 			--swiperColorDefHover: #fff;
+			&:hover {
+				opacity: .85;
+			}
 			.icon {
-				font-size: rem(24);
-				&:hover {
-					opacity: .85;
-				}
+				font-size: rem(26);
 			}
 			&-prev {
-				right: 24px;
+				right: 34px;
 				left: unset;
 			}
 		}
@@ -175,7 +178,9 @@
 			padding-left: rem(55);
 			position: relative;
 			font-family: $font-family-monospace;
-			&:not(:hover) {
+			color: #fff;
+			&:hover {
+				opacity: .7;
 				color: #fff;
 			}
 			&:before {

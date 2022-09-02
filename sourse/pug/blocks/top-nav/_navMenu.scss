@@ -33,8 +33,12 @@
 	--h: #{rem(2)};
 	--color: #fff;
 	--position: calc(var(--h) * 2);
+	@include mt;
 	display: flex;
 	align-items: center;
+	&:hover {
+		opacity: .85;
+	}
 	&.on span {
 		// --color: transparent;
 		&:before, &:after {
@@ -176,7 +180,7 @@
 			&__img-wrap {
 				margin-bottom: rem(20);
 				&::before, &::after {
-					border-color: $body-color;
+					border-color: #1e283159;
 				}
 			}
 		}

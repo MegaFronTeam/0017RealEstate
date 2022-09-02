@@ -102,6 +102,9 @@
 			font-weight: 600;
 			font-size: rem(20);
 			text-align: right;
+			&:hover {
+				opacity: .85;
+			}
 		}
 	}
 	&__working {
@@ -130,7 +133,13 @@
 		display: flex;
 		align-items: center;
 		cursor: pointer;
+		&:hover {
+			p {
+				opacity: .85;
+			}
+		}
 		p {
+			@include mt;
 			margin-bottom: 0;
 			color: #fff;
 			max-width: rem(167);

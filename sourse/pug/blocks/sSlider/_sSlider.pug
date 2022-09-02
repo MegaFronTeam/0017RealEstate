@@ -6,6 +6,8 @@ mixin sSlider(data)
 				h2 #[strong Недвижимость ] для отдыха и жизни
 				p а также для выгодной инвестиции
 			+e.slider--js.swiper
+				+e.control
+					+arrow
 				.swiper-wrapper
 					mixin mainSlide(title="Студия 48 м² в элитном комплексе в 5 минутах от пляжа")
 						+e.main-slide.swiper-slide
@@ -94,11 +96,11 @@ mixin sSlider(data)
 											+icon('pool')
 											span Есть
 								+e.col-btn.col-lg-5
-									+e.btn.btn.btn-primary(href="#" data-src='modal-call' data-fancybox="modal" data-order= `Осмотр - ${title}`).btn-js заказать онлайн-просмотр
+									+e.btn.btn.btn-primary(href="#" data-src='modal-call2' data-fancybox="modal" data-order= `Осмотр - ${title}`).btn-js заказать онлайн-просмотр
 					-for(let j = 0; j<5; j++)
 						+mainSlide
-				+e.control
-					+arrow
+				//- +e.control
+				//- 	+arrow
 			+e.footer-content.text-center
 				h4 Задать вопрос менеджеру
 				p Менеджер ответит на&nbsp;все вопросы по&nbsp;этому объекту или подберет для вас другие варианты. А&nbsp;также расскажет о&nbsp;спецпредложениях и&nbsp;объектах, которых нет в&nbsp;открытой продаже

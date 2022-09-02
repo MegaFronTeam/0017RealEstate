@@ -6,7 +6,10 @@
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
+		resize: none;
+		&:focus {
+			border-color: $primary;
+		}
  	}
  	&__btn{
  		cursor: pointer;
