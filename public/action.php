@@ -12,15 +12,17 @@ $mail->CharSet = 'utf-8';
 ///who send 
 $mail->setFrom('info@info.com','info info');
 
+$mail->addAddress('twen05@gmail.com');
+$mail->addAddress('t alisa@northcyprusinvest.net');
 // $mail->addAddress('wol1414@gmail.com');
-$mail->addAddress('janis.paberzs18@gmail.com');
+// $mail->addAddress('janis.paberzs18@gmail.com');
  // $mail->addAddress('horenkova369@gmail.com');
 // $mail->addAddress('stab@inbox.support');
 
 
 
 //Субъект
-$mail->Subject = 'Заявка с сайта';
+$mail->Subject = 'Заявка с лендинга Недвижимость';
 
 $time = date('d.m.Y в H:i');
 $html = '
@@ -79,9 +81,9 @@ $mail->Body = $html;
 
 $uploaddir = __DIR__ . '/upload/';
 
-if ($_FILES['file']['tmp_name']) {    
-    $mail->addAttachment($_FILES['file']['tmp_name'],$_FILES['file']['name']);
-}
+// if ($_FILES['file']['tmp_name']) {    
+//     $mail->addAttachment($_FILES['file']['tmp_name'],$_FILES['file']['name']);
+// }
 
 // if ($_FILES['file2']['tmp_name']) {    
 //  $mail->addAttachment($_FILES['file2']['tmp_name'],$_FILES['file2']['name']);
