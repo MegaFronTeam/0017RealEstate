@@ -8,8 +8,9 @@ mixin headerBlock()
 						//- picture
 						//- 	source(media="(min-width:400px)" srcset=`img/header-bg-${i}.jpg`)
 						//- 	+img(`img/header-bg-sm-${i}.jpg`)
-						picture
-							+img(`img/header-bg-${i}.jpg`)
+						+pic(`header-bg-${i}.jpg`)
+						//- picture
+						//- 	+img(`img/header-bg-${i}.jpg`)
 		+e.container.container
 			+b.section-wrap
 				h1 #[strong Недвижимость] Северного Кипра

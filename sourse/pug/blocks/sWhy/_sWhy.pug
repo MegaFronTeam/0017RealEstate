@@ -3,7 +3,8 @@ mixin sWhy(data)
 	+b.SECTION.sWhy.section#sWhy.bg-wrap&attributes(attributes)
 		+img('img/svg/sProfitable-bg-2.svg').picture-bg.sProfitable-bg
 		+e.content-wrap.bg-wrap
-			+img('img/sWhy-bg.png').picture-bg.bg
+			+pic('sWhy-bg.png').picture-bg.bg
+			//- +img()
 			.container
 				+b.section-title.text-center
 					h2 #[strong Почему наши клиенты выбирают] Северный Кипр
@@ -26,7 +27,7 @@ mixin sWhy(data)
 									.col
 										+e.weather-head Ночь
 										+e.weather-body 26°C
-							+e.item
+							+e.item 
 								+img('img/svg/sWhy-1.svg').img
 								+e.title Британское образование от 300 евро/мес
 							+e.item
