@@ -30,31 +30,32 @@ const JSCCommon = {
 		})
 		Fancybox.bind('[data-fancybox]', {
 			placeFocusBack: false,
-		});
-		const linkModal = document.querySelectorAll(link);
-		function addData() {
-			linkModal.forEach(element => {
-				element.addEventListener('click', () => {
-					let modal = document.querySelector("#" + element.dataset.src);
-					const data = element.dataset;
+		}); 
+		document.addEventListener('click', (event) => {
+			let element = event.target.closest(link)
+			if(!element) return;
+			let modal = document.querySelector("#" + element.dataset.src);
+			const data = element.dataset;
 
-					function setValue(val, elem) {
-						if (elem && val) {
-							const el = modal.querySelector(elem)
-							el.tagName == "INPUT"
-								? el.value = val
-								: el.innerHTML = val;
-							// console.log(modal.querySelector(elem).tagName)
-						}
-					}
-					setValue(data.title, '.ttu');
-					setValue(data.text, '.after-headline');
-					setValue(data.btn, '.btn');
-					setValue(data.order, '.order');
-				})
-			})
-		}
-		if (linkModal) addData();
+			function setValue(val, elem) {
+				if (elem && val) {
+					const el = modal.querySelector(elem)
+					el.tagName == "INPUT"
+						? el.value = val
+						: el.innerHTML = val;
+					// console.log(modal.querySelector(elem).tagName)
+				}
+			}
+			setValue(data.title, '.ttu');
+			setValue(data.text, '.after-headline');
+			setValue(data.btn, '.btn');
+			setValue(data.order, '.order');
+		})
+		// linkModal.forEach(element => {
+		// })
+		// function addData() {
+		// }
+		// if (linkModal) addData();
 	},
 	// /modalCall
 	toggleMenu() {

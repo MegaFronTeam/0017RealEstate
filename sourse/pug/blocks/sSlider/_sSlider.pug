@@ -40,7 +40,7 @@ mixin sSlider(data)
 										.swiper-wrapper
 											-for(let i = 1; i< num; i++)
 												+e.slide.swiper-slide
-													+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/sSlider-img-${slide}-${i}.jpg`)
+													+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/sSlider-img-${slide}-${i}.jpg` data-thumb=`img/sSlider-img-${slide}-${i}.jpg`)
 														+icon('zoom')
 													+e.img-wrap
 														+img(`img/sSlider-img-${slide}-${i}.jpg`)
