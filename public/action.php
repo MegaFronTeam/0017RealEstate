@@ -10,7 +10,7 @@ $mail->Encoding = 'base64';
 $mail->CharSet = 'utf-8';
 
 ///who send 
-$mail->setFrom('info@info.com','info info');
+$mail->setFrom('info@kipr.life','KIPR.LIFE');
 
 $mail->addAddress('twen05@gmail.com');
 $mail->addAddress('t alisa@northcyprusinvest.net');
@@ -22,7 +22,7 @@ $mail->addAddress('t alisa@northcyprusinvest.net');
 
 
 //Субъект
-$mail->Subject = 'Заявка с лендинга Недвижимость';
+$mail->Subject = 'Новая заявка с сайта KIPR.LIFE';
 
 $time = date('d.m.Y в H:i');
 $html = '

@@ -70,6 +70,20 @@
 						}
 					}
 				}
+				@include media-breakpoint-down(md) {
+					.top-nav__logo-wrap{
+
+						top: -.625rem;
+					}
+					.top-nav__logo{
+						img {
+							max-width: 3.7rem;
+					}
+						background: none;
+						padding-top: 0;
+						padding-bottom: 0;
+					}
+				}
 			}
 			&.fixed-show{
 				transform: translateY(0);

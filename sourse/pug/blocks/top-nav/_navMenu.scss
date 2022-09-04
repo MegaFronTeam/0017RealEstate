@@ -154,7 +154,11 @@
 		.top-nav {
 			&__logo-wrap {
 				justify-content: center;
-				margin-bottom: rem(40);
+				@include media-breakpoint-up(lg) {
+
+					margin-bottom: rem(40);
+				}
+				margin-bottom: rem(20);
 				position: static;
 				top: unset;
 				transform: unset;
@@ -230,11 +234,26 @@
 		display: block;
 		margin: 0;
 		// border-top: 1px solid rgba(255, 255, 255, .13);
+		@include media-breakpoint-up(xxl) {
+		margin-bottom: rem(20);
+	}
+	@include media-breakpoint-up(lg) {
+
+		margin-bottom: rem(15);
+	}
+	margin-bottom: rem(10);
 		&:not(:last-child) {
-			margin-bottom: rem(20);
 		}
 		a {
-			font-size: rem(24);
+			@include media-breakpoint-up(xxl) {
+
+				font-size: rem(24);
+			} 
+			@include media-breakpoint-up(lg) {
+
+				font-size: rem(22);
+			}
+			font-size: rem(20);
 			color: $body-color;
 			font-weight: 700;
 
