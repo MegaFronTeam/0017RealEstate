@@ -36,11 +36,11 @@ mixin sSlider(data)
 						+e.main-slide.swiper-slide
 							+e.row.row
 								+e.col-main.col-lg-7
-									+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/sSlider-img-${slide}-1.jpg` data-thumb=`img/sSlider-img-${slide}-1.jpg`)
+									+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/@2x/sSlider-img-${slide}-1.jpg` data-thumb=`img/@2x/sSlider-img-${slide}-1.jpg`)
 										+icon('zoom')
 									
 									-for(let i = 2; i< num; i++)
-										+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/sSlider-img-${slide}-${i}.jpg` data-thumb=`img/sSlider-img-${slide}-${i}.jpg`).d-none
+										+e.full-size(data-fancybox=`gallery-${slide}` data-src=`img/@2x/sSlider-img-${slide}-${i}.jpg` data-thumb=`img/@2x/sSlider-img-${slide}-${i}.jpg`).d-none
 											+icon('zoom')
 									+e.gallery-slider--js.swiper
 										.swiper-wrapper
