@@ -12,9 +12,9 @@ $mail->CharSet = 'utf-8';
 ///who send 
 $mail->setFrom('info@kipr.life','KIPR.LIFE');
 
-$mail->addAddress('twen05@gmail.com');
-$mail->addAddress('t alisa@northcyprusinvest.net');
-// $mail->addAddress('wol1414@gmail.com');
+// $mail->addAddress('twen05@gmail.com');
+// $mail->addAddress('alisa@northcyprusinvest.net');
+$mail->addAddress('wol1414@gmail.com');
 // $mail->addAddress('janis.paberzs18@gmail.com');
  // $mail->addAddress('horenkova369@gmail.com');
 // $mail->addAddress('stab@inbox.support');
